@@ -1,0 +1,12 @@
+npm i --save-dev nodemon:
+    --save-dev install to development dependency (will not download when npm run build)
+
+rest request(option):
+    github extension: rest
+    instead of using postman, using rest to make rest request
+
+"type": "module",
+    use import from instead of const=require
+
+for JWT explain***:
+    https://www.youtube.com/watch?v=7Q17ubqLfaM
