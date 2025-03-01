@@ -2,8 +2,9 @@ npm i --save-dev nodemon:
     --save-dev install to development dependency (will not download when npm run build)
 
 rest request(option):
-    github extension: rest
-    instead of using postman, using rest to make rest request
+    github extension: REST Client
+    instead of using postman, using REST Client to make rest request
+    // in file requests.rest (any .rest file works)
 
 "type": "module",
     use import from instead of const=require
