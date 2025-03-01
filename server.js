@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
-const port = 3000;
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
+const PORT = process.env.NodejsPort;
 
 app.use(express.json());
 
@@ -24,4 +25,4 @@ app.get('/login', (req, res) => {
     // Authenticate user
 });
 
-app.listen(port);
+app.listen(PORT);
