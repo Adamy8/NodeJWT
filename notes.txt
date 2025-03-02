@@ -23,3 +23,6 @@ token in stored in the header:
 
 Yes, HTTP headers are case-insensitive. This means that headers like Authorization and authorization are treated the same way by the server.
 
+Bcrypt:
+    each time generate a new salt,
+    and use this salt to hash
