@@ -1,7 +1,7 @@
 npm i --save-dev nodemon:
     --save-dev install to development dependency (will not download when npm run build)
 
-rest request(option):
+REST Client request(option):
     github extension: REST Client
     instead of using postman, using REST Client to make rest request
     // in file requests.rest (any .rest file works)
@@ -11,3 +11,11 @@ rest request(option):
 
 for JWT explain***:
     https://www.youtube.com/watch?v=7Q17ubqLfaM
+
+token in stored in the header:
+        const authHeader = req.headers['authorization'];
+        const token = authHeader && authHeader.split(' ')[1];
+    This is beacuse header format:: Bearer Token, so=> .split(' ')[1]
+
+Yes, HTTP headers are case-insensitive. This means that headers like Authorization and authorization are treated the same way by the server.
+
