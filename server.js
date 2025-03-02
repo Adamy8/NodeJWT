@@ -1,3 +1,5 @@
+// 3000
+
 require('dotenv').config();
 const express = require('express');
 const app = express();
@@ -20,7 +22,6 @@ const posts = [
 app.get('/posts', authenticateToken, (req, res) => {
     res.json(posts.filter(post => post.username === req.user.name));
 });
-
 
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];
