@@ -8,7 +8,7 @@ const PORT = process.env.AuthPort;
 
 app.use(express.json());
 
-app.post('/token', (req, res) => {
+app.post('/token', (req, res) => {          // Future: add  token = []  to store available tokens
     const refreshToken = req.body.token;
     if (refreshToken == null) return res.sendStatus(401);
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
@@ -16,6 +16,13 @@ app.post('/token', (req, res) => {
         const accessToken = generateAccessToken({ name: user.name });
         res.json({ accessToken: accessToken });
     });
+});
+
+let refreshTokens = [];
+
+app.delete('/logout', (req, res) => {
+    refreshTokens = refreshTokens.filter(token => token !== req.body.token);
+    res.sendStatus(204);
 });
 
 app.post('/login', (req, res) => {
